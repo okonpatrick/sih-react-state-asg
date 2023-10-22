@@ -15,7 +15,7 @@ class CardButton extends Component {
     this.setState((prevState) => ({
       count: prevState.count + 1,
     }));
-    document.title = `Cart ${this.state.count <= 1 && this.state.count < 2 ? 'Item' : 'Items'}: ${this.state.count + 1}`;
+    document.title = `Cart ${this.state.count < 2 ? 'Item' : 'Items'}: ${this.state.count + 1}`;
   };
 
   render() {
