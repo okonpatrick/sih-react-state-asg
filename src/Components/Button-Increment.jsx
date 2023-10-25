@@ -10,18 +10,18 @@ class CardButton extends Component {
       count: 0,
     };
   }
-
   handleButtonClick = () => {
     this.setState((prevState) => ({
       count: prevState.count + 1,
-    }));
-    document.title = `Cart ${this.state.count < 2 ? 'Item' : 'Items'}: ${this.state.count + 1}`;
+    }), ()=> {
+      document.title = `Cart ${this.state.count < 2 ? 'Item' : 'Items'}: ${this.state.count}`;
+    }); 
   };
 
   render() {
     return (
       <div>
-      <h2>{`Cart ${this.state.count <= 1 ? "Item" : "Items"}: ${
+      <h2>{`Cart ${this.state.count < 2 ? "Item" : "Items"}: ${
           this.state.count
         }`}</h2>
       <h3>Click the button To Change State</h3>
